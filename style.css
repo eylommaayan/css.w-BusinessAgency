@@ -28,13 +28,130 @@ html {
   background-color: #ddd;
 }
 
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container,
+.section-1,
+.section-2,
+.section-3,
+.section-4 {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* עדיף גובה דינמי: במקום height:100vh קשיח (בעייתי במ מובייל) */
+.section-1,
+.section-2,
+.section-3,
+.section-4 {
+  height: auto !important;
+  min-height: 100svh; /* 100svh עדכני, מותאם למובייל */
+}
+
+/* ===== Section 4: מרכז מלא ===== */
+.section-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* ממרכז אופקית */
+  justify-content: flex-start;
+  padding: 3rem 1.6rem;        /* ריווח עדין */
+}
+
+.section-4 .section-heading {
+  text-align: center;
+  margin: 0 auto 1rem;         /* מרכז כותרת */
+}
+
+.section-4 .section-heading-line {
+  margin: 0 auto 2rem;         /* מרכז הקו */
+}
+
+/* הקונטיינר הפנימי – מרכז ומגביל רוחב */
+.contact-wrapper {
+  width: min(92%, 80rem);
+  margin: 0 auto;              /* מרכז את ה-wrapper */
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* מרכז את התוכן שבתוכו */
+  gap: 2.4rem;
+}
+
+/* שלושת הבלוקים (טלפון/כתובת/אימייל) – באמצע ובאותה שורה כשאפשר */
+.contact-details {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;     /* ממרכז את כל הכרטיסיות */
+  gap: 2.4rem;
+  text-align: center;          /* טקסט באמצע */
+}
+
+.contact-details div {
+  width: clamp(22rem, 30vw, 26rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;         /* מרכז גם את האייקון והכותרת */
+}
+
+/* הטופס – רוחב נוח ומרוכז */
+.contact-form {
+  width: min(92%, 52rem);
+  margin: 0 auto;              /* מרכז את הטופס */
+}
+
+/* מובייל קטן – קצת יותר ריווח ואייקונים קטנים */
+@media (max-width: 500px) {
+  .section-4 { padding: 2.4rem 1.2rem; }
+  .contact-details { gap: 1.6rem; }
+  .contact-details div { width: 100%; }   /* עמודה אחת */
+}
+
+
+/* ===== Hero / Banner התאמות שלא יגלוש לרוחב ===== */
+.banner-heading {
+  height: auto; /* לא גובה קשיח */
+  perspective: none;
+  overflow: visible;
+  text-align: center;
+  padding: 0 1rem;
+}
+.banner-heading span {
+  position: static; /* שלא יברח מהזרימה ויגרום ל-overflow */
+  display: block;
+  transform: none !important;
+  opacity: 1 !important;
+  letter-spacing: clamp(0.3rem, 1vw, 1.2rem); /* פחות מרווח במובייל */
+  font-size: clamp(3.2rem, 9vw, 10rem); /* סקלת פונט אלסטית */
+  text-wrap: balance;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.banner-paragraph {
+  width: min(90%, 60rem);
+  margin: 1.2rem auto 2rem;
+  font-size: clamp(1.6rem, 3.6vw, 3rem);
+  padding: 1rem 1.2rem;
+}
+
+/* כפתור בגודל גמיש */
+.banner-btn {
+  width: min(90%, 30rem);
+  height: 5.2rem;
+  font-size: clamp(1.4rem, 3.4vw, 2rem);
+}
 /* End of Common Styles */
 
 /* Navbar */
 .navbar {
   width: 100%;
   height: 8rem;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(158, 242, 255, 0.9);
   position: fixed;
   top: -8rem;
   z-index: 10;
@@ -73,7 +190,7 @@ html {
   font-family: "MADE Soulmaze", sans-serif;
   font-size: 3.5rem;
   font-weight: bold;
-  color: #9e0e09;
+  color: #03b3ff;
 }
 
 .nav-list {
@@ -240,7 +357,7 @@ html {
   font-weight: 400;
   text-transform: uppercase;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(41, 162, 255, 0.6);
   width: 30%;
   margin: 0 auto 4rem auto;
   padding: 1rem 0;
@@ -253,12 +370,12 @@ html {
 .banner-btn {
   width: 30rem;
   height: 6rem;
-  background: linear-gradient(to right, #9b0e0e, #7a1010);
+  background: linear-gradient(to right, #03b3ff, #02a2ff);
   color: #fff;
   font-size: 2rem;
   text-transform: uppercase;
   border-radius: 3rem;
-  border: 0.1rem solid #800505;
+  border: 0.1rem solid #fefefe;
   box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.5);
   text-shadow: 0.6rem 0.3rem 0.2rem rgba(0, 0, 0, 0.4);
   cursor: pointer;
@@ -351,7 +468,7 @@ html {
 .video-bar {
   height: 100%;
   width: 0;
-  background-color: #d30819;
+  background-color: #ffffff;
   transition: width 0.2s linear;
 }
 
@@ -783,109 +900,197 @@ html {
   }
 }
 
+/* ===== Section 2 Video — מרכזים במובייל, בלי overflow ===== */
 @media (max-width: 900px) {
-  html {
-    font-size: 40%;
-  }
-
-  .banner {
-    top: 25%;
-  }
-
-  .banner-heading {
-    height: 15rem;
-  }
-
-  .banner-heading span {
-    font-size: 8rem;
-  }
-
-  .footer {
-    padding: 0 5rem;
-  }
-
-  .footer-nav a {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 700px) {
-  html {
-    font-size: 35%;
-  }
-
   .section-2 {
-    height: 100vh;
-  }
-
-  .contact-details div {
-    margin: 3rem 2rem;
-  }
-
-  .footer {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .footer-nav {
-    margin-bottom: 2rem;
-  }
-}
-
-@media (max-width: 500px) {
-  html {
-    font-size: 30%;
-  }
-
-  .banner-heading span {
-    font-size: 4.5rem;
-    letter-spacing: 2rem;
-  }
-
-  @keyframes animateHeading {
-    0% {
-      transform: translateZ(8rem);
-      opacity: 0;
-      letter-spacing: 2rem;
-    }
-    3% {
-      transform: translateZ(0);
-      opacity: 1;
-      letter-spacing: 1rem;
-    }
-    25% {
-      transform: translateZ(0);
-      opacity: 1;
-      letter-spacing: 1rem;
-    }
-    28% {
-      transform: translateZ(8rem);
-      opacity: 0;
-      letter-spacing: 2rem;
-    }
-    100% {
-      transform: translateZ(8rem);
-      opacity: 0;
-      letter-spacing: 2rem;
-    }
+    min-height: auto; /* שלא יכריח 100vh וייצר חללים לבנים */
+    padding: 3rem 1.6rem;
   }
 
   .video-wrapper {
-    width: 60rem;
+    position: static !important; /* במקום absolute */
+    top: auto;
+    right: auto;
+    left: auto;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 80rem;
+    height: auto !important;
+    margin: 0 auto;
+    box-shadow: 2rem 2rem 3rem rgba(0, 0, 0, 0.6);
+  }
+
+  .video {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16/9; /* יחס קבוע, בלי גלילה */
+    object-fit: cover;
+  }
+
+  .controls {
+    position: relative; /* לא absolute כדי לא לגלוש */
+    transform: none;
+  }
+  .video-bar-wrapper {
+    position: static;
+  }
+
+ /* === מרכז פסקת "אודותינו" במובייל === */
+@media (max-width: 900px) {
+  .section-2 { 
+    display: block; 
+    padding: 3rem 1.6rem;
+    height: auto;
+  }
+
+  .video-wrapper {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 80rem;
+    height: auto !important;
+    margin: 0 auto;              /* מרכז את הווידאו */
   }
 
   .section-2-paragraph {
-    width: 60rem;
+    position: static !important; /* מבטל absolute */
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+
+    width: 100% !important;      /* לא 100rem */
+    max-width: 80rem;
+    margin: 1.6rem auto 0 !important;  /* מרכז את הבלוק */
+    padding: 1.8rem 1.6rem;
+
+    text-align: center !important;     /* לא justify */
+    line-height: 1.75;
+    background: rgba(0,0,0,.25);
+    border-radius: .8rem;
+    border-top-width: .2rem;
+    border-bottom-width: .2rem;
   }
 
-  .contact-details div {
-    width: 18rem;
-    margin: 3rem 1rem;
-  }
-
-  .contact-form {
-    width: 60rem;
+  .section-2-paragraph .fa-quote-left,
+  .section-2-paragraph .fa-quote-right {
+    font-size: 2.6rem;
+    margin: 0 .6rem .6rem;
+    align-self: center;          /* שלא ימשוך שמאלה/ימינה */
   }
 }
 
-/* End of Responsive */
+/* ===== Section 3 כרטיסים — בלי גלילה לצד, גמישים במובייל ===== */
+.pricing-cards-wrapper {
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 1.2rem !important; /* פחות padding שיגרום ל-overflow */
+}
+
+.pricing-card {
+  width: clamp(26rem, 90vw, 40rem) !important; /* לא יחרוג מרוחב מסך */
+  height: auto !important;
+  border-radius: 1.2rem;
+  box-shadow: 1.2rem 1.2rem 3rem rgba(0, 0, 0, 0.55);
+}
+
+.pricing-card-front {
+  padding: 2rem;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 1.2rem;
+}
+
+.pricing-card-heading {
+  height: auto;
+  padding: 1.2rem 1.6rem;
+  font-size: clamp(1.6rem, 3.5vw, 2rem);
+}
+
+.pricing-card-price {
+  font-size: clamp(3.2rem, 8vw, 5.2rem);
+}
+.pricing-card-list span {
+  font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+}
+.pricing-card-list i {
+  font-size: 1.6rem;
+}
+.pricing-card-btn {
+  width: 100%;
+  margin-top: auto;
+  height: 4.6rem;
+  font-size: 1.5rem;
+}
+
+/* אם נשאר צד אחורי — מחביאים כדי שלא יפריע */
+.pricing-card-back {
+  display: none !important;
+}
+
+/* ===== ניווט/לוגו — מבטיח שלא יגרום לרוחב עודף ===== */
+.navbar {
+  left: 0;
+  right: 0;
+}
+.logo {
+  left: 2rem;
+} /* פחות מרווח קשיח */
+.menu {
+  right: 2rem;
+}
+
+/* ===== כותרות סקשן ענקיות — להקטין במובייל שלא ישברו שורה רוחבית ===== */
+.section-heading {
+  font-size: clamp(3.2rem, 10vw, 7rem);
+  margin: 0 1.6rem 1.2rem;
+}
+.section-heading-line {
+  width: min(15rem, 60%);
+  margin-inline-start: 1.6rem;
+}
+
+/* ===== Section 4 טפסים — בלי גלילה אופקית ===== */
+.contact-wrapper {
+  width: min(90%, 80rem);
+}
+.contact-form {
+  width: 100%;
+}
+.contact-details {
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.contact-details div {
+  width: clamp(20rem, 44vw, 25rem);
+  margin: 0;
+}
+
+/* ===== פוטר — גמיש ורחב בטוח ===== */
+.footer {
+  padding: 2rem clamp(1.2rem, 4vw, 10rem);
+}
+.footer-nav a {
+  margin-inline-end: clamp(1rem, 3vw, 3rem);
+}
+
+/* ===== פינישים למכשירים הכי קטנים ===== */
+@media (max-width: 500px) {
+  .section-2 {
+    padding: 2rem 1.2rem;
+  }
+  .video-wrapper {
+    max-width: 60rem;
+  }
+  .section-2-paragraph {
+    padding: 1.6rem 1.2rem;
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    border-top-width: 0.15rem;
+    border-bottom-width: 0.15rem;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
