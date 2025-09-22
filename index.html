@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More-Ways CSS Studio — סוכנות עיצוב וקורסי CSS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- אפשר להחליף לפונט עברי לבחירתך -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#home" aria-label="More-Ways CSS Studio">
+          <span>M</span>ore-<span>W</span>ays <span>CSS</span> Studio
+        </a>
+      </div>
+      <div class="nav-list">
+        <a href="#home" class="nav-link">בית</a>
+        <a href="#about-us" class="nav-link">אודות</a>
+        <a href="#pricing" class="nav-link">מסלולים</a>
+        <a href="#blog" class="nav-link">בלוג</a>
+        <a href="#contact" class="nav-link">צור קשר</a>
+      </div>
+    </nav>
+    <!-- End of Navbar -->
+
+    <!-- Menu (Mobile) -->
+    <div class="menu" aria-label="תפריט">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+    </div>
+    <!-- End of Menu -->
+
+    <div class="container">
+      <!-- Section 1 -->
+      <section class="section-1" id="home">
+        <div class="banner">
+          <h1 class="banner-heading">
+            <span class="heading-1">עסק דיגיטלי שמבליט אתכם</span>
+            <span class="heading-2">עיצוב חכם • קוד נקי</span>
+            <span class="heading-3">קורסים מעשיים ב-CSS</span>
+            <span class="heading-4">מ-Flexbox ועד Grid</span>
+          </h1>
+          <p class="banner-paragraph">
+            אנחנו מעצבים אתרים מעולים — ובדרך מלמדים אתכם בדיוק איך לעשות זאת
+            בעצמכם.
+          </p>
+          <button class="banner-btn" onclick="location.href='#pricing'">
+            הצעות מחיר
+          </button>
+        </div>
+      </section>
+      <!-- End of Section 1 -->
+
+      <!-- Section 2 -->
+      <section class="section-2" id="about-us">
+        <h1 class="section-heading">אודותינו</h1>
+        <div class="section-heading-line"></div>
+
+        <div class="video-wrapper">
+          <!-- שים כאן וידאו קצר על העסק / טעימה מהקורס -->
+          <video
+            class="video"
+            src="images/about-us-video.mp4"
+            title="היכרות עם More-Ways CSS Studio"
+          ></video>
+
+          <div class="controls" aria-label="פקדי וידאו">
+            <div class="video-bar-wrapper">
+              <div class="video-bar"></div>
+            </div>
+            <div class="buttons">
+              <button aria-label="נגן/השהה וידאו">
+                <i class="far fa-play-circle"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="section-2-paragraph">
+          <i class="fas fa-quote-left" aria-hidden="true"></i>
+          במרכז שלנו משלבים עבודת סטודיו אמיתית עם חוויית לימוד עדכנית. כל
+          פרויקט שאנחנו בונים — הופך לשיעור חי: טיפוגרפיה חדה, צבעוניות מאוזנת,
+          ו-CSS שקורא כמו סיפור. תמצאו אצלנו סדנאות קצרות, קורסים מלאים, ושפע
+          משימות פרקטיות שיקפיצו אתכם קדימה.
+          <i class="fas fa-quote-right" aria-hidden="true"></i>
+        </p>
+      </section>
+      <!-- End of Section 2 -->
+
+      <!-- End of Section 3 -->
+
+      <!-- “Blog” Teaser (רמז לקורסים/מאמרים) -->
+      <section class="section-2" id="blog" aria-label="בלוג ותוכן לימודי">
+        <h1 class="section-heading">מה בבלוג?</h1>
+        <div class="section-heading-line"></div>
+        <p class="section-2-paragraph">
+          <i class="fas fa-quote-left" aria-hidden="true"></i>
+          מחכים לכם מדריכים קצרים ומדויקים: “איך לתכנן Grid של עמוד קורס”, “5
+          דפוסים ל-Flexbox שתמיד עובדים”, “איך לבנות מערכת כרטיסים רספונסיבית”,
+          ו-“טעימות מהקורסים שלנו” — הכל עם דוגמאות קוד שתוכלו להדביק ולרוץ.
+          <i class="fas fa-quote-right" aria-hidden="true"></i>
+        </p>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="section-4" id="contact">
+        <h1 class="section-heading">צור קשר</h1>
+        <div class="section-heading-line"></div>
+
+        <div class="contact-wrapper">
+          <div class="contact-details">
+            <div class="phone">
+              <i class="fas fa-mobile-alt"></i>
+              <h3>טלפון</h3>
+              <p>050-123-4567</p>
+              <p>052-987-6543</p>
+            </div>
+            <div class="address">
+              <i class="fas fa-map-marker-alt"></i>
+              <h3>כתובת</h3>
+              <p>רח’ המעצבים 12, תל-אביב</p>
+              <p>סטודיו: חלל עבודה More-Ways</p>
+            </div>
+            <div class="email">
+              <i class="far fa-envelope"></i>
+              <h3>אימייל</h3>
+              <p>support@more-ways.co.il</p>
+              <p>courses@more-ways.co.il</p>
+            </div>
+          </div>
+
+          <h1>נשמח לדבר</h1>
+          <form
+            class="contact-form"
+            onsubmit="event.preventDefault(); alert('תודה! נחזור אליך בהקדם.');"
+          >
+            <input type="text" placeholder="השם שלך" />
+            <input type="email" placeholder="האימייל שלך" />
+            <textarea
+              placeholder="ספרו לנו על האתר שתרצו או על קורס שמעניין אתכם"
+            ></textarea>
+            <input type="submit" value="שליחת הודעה" />
+          </form>
+        </div>
+      </section>
+      <!-- End of Section 4 -->
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-nav">
+          <a href="#home">בית</a>
+          <a href="#about-us">אודות</a>
+          <a href="#pricing">מסלולים</a>
+          <a href="#contact">צור קשר</a>
+        </div>
+        <p class="copyright">© כל הזכויות שמורות — More-Ways CSS Studio</p>
+      </footer>
+      <!-- End of Footer -->
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
