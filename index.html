@@ -1,8 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="he" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="robots" content="noindex, nofollow" />
+
+    <link rel="canonical" href="https://more-ways.co.il/" />
+
     <title>More-Ways CSS Studio — סוכנות עיצוב וקורסי CSS</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -25,7 +30,16 @@
           <span>M</span>ore-<span>W</span>ays <span>CSS</span> Studio
         </a>
       </div>
+
       <div class="nav-list">
+        <a
+          href="https://more-ways.co.il"
+          class="nav-link"
+          style="color: #ffcc00; font-weight: bold"
+        >
+          <i class="fas fa-external-link-alt"></i> לאתר הראשי
+        </a>
+
         <a href="#home" class="nav-link">בית</a>
         <a href="#about-us" class="nav-link">אודות</a>
         <a href="#pricing" class="nav-link">מסלולים</a>
@@ -51,7 +65,7 @@
             <span class="heading-1">עסק דיגיטלי שמבליט אתכם</span>
           </h1>
 
-          <button class="banner-btn" onclick="location.href='#pricing'">
+          <button class="banner-btn" onclick="location.href = '#pricing'">
             הצעות מחיר
           </button>
         </div>
@@ -126,7 +140,7 @@
                 </ul>
                 <button
                   class="pricing-card-btn btn-free"
-                  onclick="location.href='#contact'"
+                  onclick="location.href = '#contact'"
                 >
                   בחרו מסלול
                 </button>
@@ -165,7 +179,7 @@
                 </ul>
                 <button
                   class="pricing-card-btn btn-basic"
-                  onclick="location.href='#contact'"
+                  onclick="location.href = '#contact'"
                 >
                   בחרו מסלול
                 </button>
@@ -209,7 +223,7 @@
                 </ul>
                 <button
                   class="pricing-card-btn btn-premium"
-                  onclick="location.href='#contact'"
+                  onclick="location.href = '#contact'"
                 >
                   בחרו מסלול
                 </button>
@@ -266,7 +280,10 @@
           <h1>נשמח לדבר</h1>
           <form
             class="contact-form"
-            onsubmit="event.preventDefault(); alert('תודה! נחזור אליך בהקדם.');"
+            onsubmit="
+              event.preventDefault();
+              alert('תודה! נחזור אליך בהקדם.');
+            "
           >
             <input type="text" placeholder="השם שלך" />
             <input type="email" placeholder="האימייל שלך" />
@@ -286,6 +303,11 @@
           <a href="#about-us">אודות</a>
           <a href="#pricing">מסלולים</a>
           <a href="#contact">צור קשר</a>
+          <a
+            href="https://more-ways.co.il"
+            style="font-weight: bold; color: #ffcc00"
+            >חזרה ל-More-Ways</a
+          >
         </div>
         <p class="copyright">© כל הזכויות שמורות — More-Ways CSS Studio</p>
       </footer>
@@ -294,5 +316,18 @@
 
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="script.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "More-Ways CSS Studio Demo",
+        "author": {
+          "@type": "Organization",
+          "name": "More-Ways",
+          "url": "https://more-ways.co.il"
+        }
+      }
+    </script>
   </body>
 </html>
