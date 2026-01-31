@@ -320,13 +320,35 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "More-Ways CSS Studio Demo",
-        "author": {
-          "@type": "Organization",
-          "name": "More-Ways",
-          "url": "https://more-ways.co.il"
-        }
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://css-w-business-agency.more-ways.co.il/#webpage",
+            "name": "More-Ways CSS Studio — סוכנות עיצוב וקורסי CSS",
+            "description": "דף נחיתה לדוגמה של סוכנות דיגיטל, עיצוב ובניית אתרים מבית More-Ways.",
+            "author": {
+              "@type": "Organization",
+              "name": "More-Ways",
+              "url": "https://more-ways.co.il"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "More-Ways (האתר הראשי)",
+                "item": "https://more-ways.co.il"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "פרויקט Business Agency"
+              }
+            ]
+          }
+        ]
       }
     </script>
   </body>
